@@ -1,15 +1,34 @@
 # dsh-pet 🐾
+
+> ## ⚠️ 关于本仓库
+>
+> 本仓库 [`FogStop/desktop-pet-fog`](https://github.com/FogStop/desktop-pet-fog) 是
+> **[PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet) 的改造版（衍生版）**，
+> **不是**原版作者的官方发行版，原版仓库请以上面的链接为准。
+>
+> 本仓库在原版基础上做的改动（详见各节标注与提交记录）：
+>
+> - 内置 **20 只社区像素形象**（Petdex 素材转换）并支持右键随时切换，配套 6 档大小控制
+> - 新增 `SKIN_FALLBACK` 语义兜底映射，切换形象后**交互不再回退到小胖鱼**
+> - 新增**场景感知碎碎念**：自动识别听歌 / 看视频 / 聊天，三套台词池各 38 句
+> - 非默认形象的气泡改为纯文字，不再混搭小胖鱼表情包
+> - 补齐 Windows 下微信、Apple Music 等进程的场景识别
+> - 附带 `tools/petdex-import/`（社区形象抓取 / 转换 / 预览选图工具）与中文[使用指南](使用指南.md)
+>
+> 依据 MIT 许可保留原版全部版权声明，见 [LICENSE](LICENSE)；原版关于二次创作需注明原作者地址的
+> 约定见下方「许可」一节，本仓库同样遵守。
+
 > 📘 想直接上手？安装 / 运行 / 配置 / 换形象的完整中文教程见 **[使用指南.md](使用指南.md)**。
 
 <p align="center">
   <a href="https://www.npmjs.com/package/dsh-pet"><img alt="npm version" src="https://img.shields.io/npm/v/dsh-pet?label=npm&color=blue"></a>
   <a href="https://www.npmjs.com/package/dsh-pet"><img alt="npm monthly downloads" src="https://img.shields.io/npm/dm/dsh-pet?label=%E6%9C%88%E4%B8%8B%E8%BD%BD&color=brightgreen"></a>
   <a href="https://www.npmjs.com/package/dsh-pet"><img alt="total downloads" src="https://img.shields.io/npm/dt/dsh-pet?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=success"></a>
-  <a href="https://github.com/PC2005-cloud/dsh-pet"><img alt="stars" src="https://img.shields.io/github/stars/PC2005-cloud/dsh-pet?style=social"></a>
-  <a href="https://github.com/PC2005-cloud/dsh-pet/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/PC2005-cloud/dsh-pet?color=orange"></a>
+  <a href="https://github.com/FogStop/desktop-pet-fog"><img alt="stars" src="https://img.shields.io/github/stars/FogStop/desktop-pet-fog?style=social"></a>
+  <a href="https://github.com/FogStop/desktop-pet-fog/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/FogStop/desktop-pet-fog?color=orange"></a>
   <a href="https://awesome-dsh-plugin.com"><img alt="awesome dsh plugin" src="https://awesome-dsh-plugin.com/badge.svg"></a>
-  <a href="https://github.com/PC2005-cloud/dsh-pet"><img alt="repo size" src="https://img.shields.io/github/repo-size/PC2005-cloud/dsh-pet"></a>
-  <a href="https://github.com/PC2005-cloud/dsh-pet/issues"><img alt="issues" src="https://img.shields.io/github/issues/PC2005-cloud/dsh-pet"></a>
+  <a href="https://github.com/FogStop/desktop-pet-fog"><img alt="repo size" src="https://img.shields.io/github/repo-size/FogStop/desktop-pet-fog"></a>
+  <a href="https://github.com/FogStop/desktop-pet-fog/issues"><img alt="issues" src="https://img.shields.io/github/issues/FogStop/desktop-pet-fog"></a>
   <img alt="platform" src="https://img.shields.io/badge/platform-DeepSeek%20Harness%20Web-8A2BE2">
   <img alt="assets" src="https://img.shields.io/badge/assets-dynamic%20animations-ff69b4">
 </p>
@@ -56,8 +75,8 @@ dsh plugin --profile desktop add dsh-pet
 
 ```sh
 # ① clone 本仓库，进入插件目录
-git clone https://github.com/PC2005-cloud/dsh-pet.git
-cd dsh-pet/dsh-pet
+git clone https://github.com/FogStop/desktop-pet-fog.git
+cd desktop-pet-fog/dsh-pet
 
 # ② 安装依赖
 npm install
@@ -67,14 +86,14 @@ npm run build       # 必须手动跑一次（克隆后 npm install 不再自动
 
 # ④ 安装到 DSH（file: 指向**插件目录**——上面 cd 进去的那一层，用构建好的 lib）
 #    --profile 同样填实际在用的：桌面应用 desktop、dsh web → web
-dsh plugin --profile desktop add file:D:/path/to/dsh-pet/dsh-pet
+dsh plugin --profile desktop add file:D:/path/to/desktop-pet-fog/dsh-pet
 ```
 
 > 注：`npm run build`（即 `scripts/prepare.js`）才产出**完整可安装**的 lib——除 tsdown 构建外还构建桌面共享核心（`shared-core.js`）、生成类型声明并收敛发布 `files` 清单；裸 `tsdown` 构建会缺桌面运行时与类型。发布与打包（`npm publish` / `npm pack`）时由 `prepack` 自动调用它，克隆仓库后需手动跑一次。
 
 ## 💬 反馈与发版节奏
 
-欢迎提 [issue](https://github.com/PC2005-cloud/dsh-pet/issues) 与 PR——bug、体验问题、优化想法都行。但动手前请先翻一眼 [提交记录](https://github.com/PC2005-cloud/dsh-pet/commits/main)，确认不是已经修掉的同款问题（有些问题可能已经在 `main` 上修好了，只是还没发版）。
+欢迎提 [issue](https://github.com/FogStop/desktop-pet-fog/issues) 与 PR——bug、体验问题、优化想法都行。但动手前请先翻一眼 [提交记录](https://github.com/FogStop/desktop-pet-fog/commits/main)，确认不是已经修掉的同款问题（有些问题可能已经在 `main` 上修好了，只是还没发版）。
 
 - **小修不单独发版**：不影响使用的小 bug 与优化会**累计**到下一个版本一起发，避免版本更迭过于频繁。所以「`main` 上已经修了」不等于「你装的这版已经包含」——`latest` 没更新时，以 `main` 的提交记录为准。
 - **想立刻用上未发布的修复**：按上面的「从源码安装」把插件指向本地仓库即可；注意**宿主半侧**的代码改动要**重开 DSH** 才生效（浏览器半侧刷新页面即可）。
@@ -504,7 +523,7 @@ python encode_thumbs.py      # 转码 640×360 播放变体 → step04/
 
 插件默认只发布 `.webm`（VP9-alpha），Safari/WKWebView 不认 webm alpha（黑底），macOS 需要在 GitHub Release 下载官方转码的 **HEVC-with-Alpha `.mov`** 素材使用，三步：
 
-1. **下载**：<https://github.com/PC2005-cloud/dsh-pet/releases/tag/assets-mov>（固定 tag，保持最新；zip 解压后文件名与 webm 一一对应）
+1. **下载**：<https://github.com/PC2005-cloud/dsh-pet/releases/tag/assets-mov>（**原版仓库**的 Release，固定 tag，保持最新；zip 解压后文件名与 webm 一一对应）
 2. **放入**：`.mov` 文件放进 `$DSH_HOME/dsh-pet/main-animation/mov/`（pet pack 宠物则是 `pet/<种类名>-animation/mov/`）
 3. **改变量**：搜 `ANIMATION_EXT`，把 `.webm` 改为 `.mov`——npm 包改产物 `lib/client.js`（桌面端如需再改 `runtime/electron-helper/shared-core.js`）；自构建改源码 `src/shared/constants.ts` 后重新构建
 
@@ -562,3 +581,4 @@ npm publish --tag latest   # prepack 自动执行构建（完整产物 + 收敛 
 - 代码：MIT
 - 素材（动画/提示词/源视频）：允许开源使用，**禁止商用**
 - **二次创作（二创）约定**：基于本项目的衍生 / 改版 / 换皮作品，在**任何介绍、展示、分发该作品的地方**，须附上原作者 GitHub 地址：<https://github.com/PC2005-cloud/dsh-pet>
+  （本仓库作为改造版同样遵守该约定——故本文档中所有指向原版的链接均保持原样。）
