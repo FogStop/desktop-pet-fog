@@ -1,11 +1,16 @@
 # dsh-pet 🐾
 
+> ⚠️ 本目录所属仓库 [`FogStop/desktop-pet-fog`](https://github.com/FogStop/desktop-pet-fog) 是
+> **[PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet) 的改造版（衍生版）**，非原版作者的官方发行版。
+> 本文是**插件子目录**的说明；完整项目说明与改造清单见仓库根目录的
+> [README](../README.md) 与[使用指南](../使用指南.md)。MIT 许可与原版版权声明见本目录 [LICENSE](LICENSE)。
+
 <p align="center">
   <a href="https://www.npmjs.com/package/dsh-pet"><img alt="npm version" src="https://img.shields.io/npm/v/dsh-pet?label=npm&color=blue"></a>
   <a href="https://www.npmjs.com/package/dsh-pet"><img alt="npm monthly downloads" src="https://img.shields.io/npm/dm/dsh-pet?label=%E6%9C%88%E4%B8%8B%E8%BD%BD&color=brightgreen"></a>
   <a href="https://www.npmjs.com/package/dsh-pet"><img alt="total downloads" src="https://img.shields.io/npm/dt/dsh-pet?label=%E6%80%BB%E4%B8%8B%E8%BD%BD&color=success"></a>
-  <a href="https://github.com/PC2005-cloud/dsh-pet"><img alt="stars" src="https://img.shields.io/github/stars/PC2005-cloud/dsh-pet?style=social"></a>
-  <a href="https://github.com/PC2005-cloud/dsh-pet/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/PC2005-cloud/dsh-pet?color=orange"></a>
+  <a href="https://github.com/FogStop/desktop-pet-fog"><img alt="stars" src="https://img.shields.io/github/stars/FogStop/desktop-pet-fog?style=social"></a>
+  <a href="https://github.com/FogStop/desktop-pet-fog/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/FogStop/desktop-pet-fog?color=orange"></a>
   <a href="https://awesome-dsh-plugin.com"><img alt="awesome dsh plugin" src="https://awesome-dsh-plugin.com/badge.svg"></a>
   <img alt="platform" src="https://img.shields.io/badge/platform-DeepSeek%20Harness%20Web-8A2BE2">
   <img alt="assets" src="https://img.shields.io/badge/assets-dynamic%20animations-ff69b4">
@@ -27,7 +32,7 @@ dsh plugin --profile desktop add dsh-pet
 
 > 💡 单一格式（默认 `.webm`）：浏览器 Chrome/Edge/Firefox 与桌面模式（Electron=Chromium）直接透明播放；Safari 不认 webm alpha（黑底），macOS 需要改用 `.mov`，见下方「🖥️ macOS 使用 mov」。
 
-> 💡 想自己造一只专属宠物？克隆 [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet) 仓库，用内置素材链（AI 提示词 → 绿幕视频 → 透明动画，素材由豆包生成）从零生成，全流程可复现。
+> 💡 想自己造一只专属宠物？克隆 [FogStop/desktop-pet-fog](https://github.com/FogStop/desktop-pet-fog) 仓库，用内置素材链（AI 提示词 → 绿幕视频 → 透明动画，素材由豆包生成）从零生成，全流程可复现。
 
 > 💡 不想每次都开着 DSH？`npx dsh-pet-standalone` 可以**完全不打开 DSH** 让桌宠住在桌面上，见下方「🧍 独立运行（完全不打开 DSH）」。
 
@@ -35,7 +40,7 @@ dsh plugin --profile desktop add dsh-pet
 
 macOS 的 Safari/WKWebView 下透明动画需用 `.mov` 素材，三步：
 
-1. **下载 mov 素材**：<https://github.com/PC2005-cloud/dsh-pet/releases/tag/assets-mov>（保持最新，zip 解压后文件名与 webm 一一对应）
+1. **下载 mov 素材**：<https://github.com/PC2005-cloud/dsh-pet/releases/tag/assets-mov>（**原版仓库**的 Release，保持最新，zip 解压后文件名与 webm 一一对应）
 2. **放入素材目录**：把 `.mov` 文件放进 `$DSH_HOME/dsh-pet/main-animation/mov/`（pet pack 宠物则是 `pet/<种类名>-animation/mov/`）
 3. **改变量**：搜 `ANIMATION_EXT`，把 `.webm` 改为 `.mov`：
    - npm 包用户改产物 `lib/client.js`（桌面端如需再改 `runtime/electron-helper/shared-core.js`）
@@ -243,10 +248,10 @@ dsh plugin --profile desktop remove dsh-pet
 宠物实际运行在 DSH Web 界面中的样子：
 
 <p>
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/assets/screenshots/dsh-pet-running-1.png" width="380" alt="dsh-pet running in DSH Web UI 1" title="dsh-pet running in DSH Web UI 1">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/assets/screenshots/dsh-pet-running-2.png" width="380" alt="dsh-pet running in DSH Web UI 2" title="dsh-pet running in DSH Web UI 2">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/assets/screenshots/dsh-pet-running-7.png" width="380" alt="dsh-pet running in DSH Web UI 7" title="dsh-pet running in DSH Web UI 7">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/assets/screenshots/dsh-pet-running-8.png" width="380" alt="dsh-pet running in DSH Web UI 8" title="dsh-pet running in DSH Web UI 8">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/assets/screenshots/dsh-pet-running-1.png" width="380" alt="dsh-pet running in DSH Web UI 1" title="dsh-pet running in DSH Web UI 1">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/assets/screenshots/dsh-pet-running-2.png" width="380" alt="dsh-pet running in DSH Web UI 2" title="dsh-pet running in DSH Web UI 2">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/assets/screenshots/dsh-pet-running-7.png" width="380" alt="dsh-pet running in DSH Web UI 7" title="dsh-pet running in DSH Web UI 7">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/assets/screenshots/dsh-pet-running-8.png" width="380" alt="dsh-pet running in DSH Web UI 8" title="dsh-pet running in DSH Web UI 8">
 </p>
 
 ## 🎬 效果预览
@@ -254,12 +259,12 @@ dsh plugin --profile desktop remove dsh-pet
 > 动画为透明背景；GIF 预览中透明部分显示为页面底色，实际播放为透明。
 
 <p>
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/dsh-pet/assets/preview/daiji-huxi-xiuxian.gif" width="160" alt="待机呼吸休闲" title="待机呼吸休闲">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/dsh-pet/assets/preview/dongzhangxiwang.gif" width="160" alt="东张西望" title="东张西望">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/dsh-pet/assets/preview/yuandi-piaofu-tabu.gif" width="160" alt="原地漂浮踏步" title="原地漂浮踏步">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/dsh-pet/assets/preview/yuandi-xiaoqi-chenmian.gif" width="160" alt="原地小憩沉眠" title="原地小憩沉眠">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/dsh-pet/assets/preview/dianji-huiying-kaixin-yuedong.gif" width="160" alt="点击回应 - 开心跃动" title="点击回应 - 开心跃动">
-  <img src="https://raw.githubusercontent.com/PC2005-cloud/dsh-pet/main/dsh-pet/assets/preview/beishubiao-tuozhuai-xuankong-fankui.gif" width="160" alt="被鼠标拖拽悬空反馈" title="被鼠标拖拽悬空反馈">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/dsh-pet/assets/preview/daiji-huxi-xiuxian.gif" width="160" alt="待机呼吸休闲" title="待机呼吸休闲">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/dsh-pet/assets/preview/dongzhangxiwang.gif" width="160" alt="东张西望" title="东张西望">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/dsh-pet/assets/preview/yuandi-piaofu-tabu.gif" width="160" alt="原地漂浮踏步" title="原地漂浮踏步">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/dsh-pet/assets/preview/yuandi-xiaoqi-chenmian.gif" width="160" alt="原地小憩沉眠" title="原地小憩沉眠">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/dsh-pet/assets/preview/dianji-huiying-kaixin-yuedong.gif" width="160" alt="点击回应 - 开心跃动" title="点击回应 - 开心跃动">
+  <img src="https://raw.githubusercontent.com/FogStop/desktop-pet-fog/main/dsh-pet/assets/preview/beishubiao-tuozhuai-xuankong-fankui.gif" width="160" alt="被鼠标拖拽悬空反馈" title="被鼠标拖拽悬空反馈">
 </p>
 
 全部动画见仓库：`dsh-pet/assets/webm/`（VP9-alpha，唯一发布格式）。
@@ -273,8 +278,8 @@ dsh plugin --profile desktop remove dsh-pet
 AI 生成动画的配方     源视频 → 透明动画的管线    运行在 DSH 里的宠物
 ```
 
-- 仓库：[PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet)
-- 素材生成提示词：[prompts/](https://github.com/PC2005-cloud/dsh-pet/tree/main/prompts)（10 秒动作提示词 + 系统通知图标提示词，可直接喂给豆包）
+- 仓库：[FogStop/desktop-pet-fog](https://github.com/FogStop/desktop-pet-fog)
+- 素材生成提示词：[prompts/](https://github.com/FogStop/desktop-pet-fog/tree/main/prompts)（10 秒动作提示词 + 系统通知图标提示词，可直接喂给豆包）
 
 ## 🔎 发现更多 DSH 插件
 

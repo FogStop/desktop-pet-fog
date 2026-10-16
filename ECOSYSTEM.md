@@ -67,7 +67,7 @@
 | 项目 | ⭐ | fork |
 |---|---|---|
 | [dsh-tauri/deepseek-harness-desktop](https://github.com/dsh-tauri/deepseek-harness-desktop) | 2974 | 199 |
-| [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet)（本项目） | 989 | 74 |
+| [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet)（**原版**，本仓库改造自它） / [FogStop/desktop-pet-fog](https://github.com/FogStop/desktop-pet-fog)（本仓库） | 989 / - | 74 / - |
 | [MerZlin/dsh-pet-indesktop](https://github.com/MerZlin/dsh-pet-indesktop) | 725 | 53 |
 | [QCYTSN/dsh-dafeiyu](https://github.com/QCYTSN/dsh-dafeiyu) | 387 | 29 |
 | [deepseek-chan-meme-pack](https://github.com/the-beating-light-of-the-nail/deepseek-chan-meme-pack)（梗鲸图源仓库） | 53 | 2 |

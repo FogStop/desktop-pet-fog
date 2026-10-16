@@ -6,7 +6,7 @@ REM ---------------------------------------------------------------
 REM  push-to-github.cmd  --  push local repo to GitHub
 REM
 REM  Usage (HTTPS, recommended):
-REM      push-to-github.cmd https://github.com/<USER>/<REPO>.git
+REM      push-to-github.cmd https://github.com/FogStop/desktop-pet-fog.git
 REM
 REM  Usage (SSH, if you have a key registered on GitHub):
 REM      push-to-github.cmd git@github.com:<USER>/<REPO>.git
